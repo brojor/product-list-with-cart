@@ -8,5 +8,10 @@ export default defineNuxtConfig({
 			'Red Hat Text': [400, 600, 700],
 		},
 	},
-  css: ['~/assets/styles.css']
+  css: ['~/assets/styles.css'],
+	app: {
+		head: {
+			title: 'Product list with cart',
+		},
+	}
 })
