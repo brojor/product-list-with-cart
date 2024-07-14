@@ -11,8 +11,17 @@ export const useCartStore = defineStore('cart', {
 				(total, item) => total + item.product.price * item.quantity,
 				0
 			),
+
 		totalQuantity: (state) =>
 			state.items.reduce((total, item) => total + item.quantity, 0),
+
+		isInCart: (state) => (productId: number) =>
+			state.items.some((item) => item.product.id === productId),
+
+		getQuantity: (state) => (productId: number) => {
+			const item = state.items.find((item) => item.product.id === productId)
+			return item ? item.quantity : 0
+		},
 	},
 
 	actions: {
@@ -34,10 +43,19 @@ export const useCartStore = defineStore('cart', {
 			}
 		},
 
-		updateQuantity(productId: number, quantity: number) {
+		incrementQuantity(productId: number) {
 			const item = this.items.find((item) => item.product.id === productId)
 			if (item) {
-				item.quantity = quantity
+				item.quantity++
+			}
+		},
+
+		decrementQuantity(productId: number) {
+			const item = this.items.find((item) => item.product.id === productId)
+			if (item && item.quantity > 1) {
+				item.quantity--
+			} else {
+				this.removeFromCart(productId)
 			}
 		},
 	},
