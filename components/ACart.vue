@@ -105,4 +105,9 @@ button {
 	text-align: center;
 	border-radius: 1000px;
 }
+
+button:hover,
+button:focus-visible {
+	background-color: hsl(var(--clr-red-dark));
+}
 </style>

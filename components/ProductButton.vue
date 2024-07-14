@@ -43,6 +43,12 @@ const cartStore = useCartStore()
 	gap: 0.5rem;
 }
 
+.button-primary:hover,
+.button-primary:focus-visible {
+	color: hsl(var(--clr-red));
+	border-color: hsl(var(--clr-red));
+}
+
 .button-secondary {
 	display: flex;
 	justify-content: space-between;
