@@ -7,13 +7,16 @@
       </div>
     </main>
     <aside>
-      <ACart />
+      <ACart @submit="modalOpen = true" />
     </aside>
+    <OrderConfirmation @submit="modalOpen = false" v-if="modalOpen" />
   </div>
 </template>
 
 <script setup lang="ts">
 import productList from './data.json'
+
+const modalOpen = ref(false)
 </script>
 
 <style>

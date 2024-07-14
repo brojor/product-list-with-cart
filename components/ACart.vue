@@ -17,13 +17,15 @@
 				<IconsCarbonNeutral />
 				<p>This is a <strong>carbon-neutral</strong> delivery</p>
 			</div>
-			<button>Confirm Order</button>
+			<button @click="$emit('submit')">Confirm Order</button>
 		</template>
 	</div>
 </template>
 
 <script setup lang="ts">
 import { useCartStore } from '~/stores/cart';
+
+defineEmits(['submit']);
 
 const cartStore = useCartStore()
 const isEmpty = computed(() => cartStore.items.length === 0)
@@ -61,7 +63,6 @@ h2 {
 }
 
 ul {
-	list-style: none;
 	padding: 0.5rem 0
 }
 
