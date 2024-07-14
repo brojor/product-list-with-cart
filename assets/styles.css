@@ -1,8 +1,10 @@
 :root {
---clr-red: 14, 86%, 42%;
---clr-green: 159, 69%, 38%;
+	--clr-red: 14 86% 42%;
+	--clr-green: 159 69% 38%;
 
---clr-neutral-400: 5, 6%, 59%;
+	--clr-neutral-100: 20 50% 98%;
+	--clr-neutral-400: 5 6% 59%;
+	--clr-neutral-900: 16 77% 8%;
 }
 
 
@@ -24,8 +26,15 @@ picture {
 
 button {
 	font-family: inherit;
+	cursor: pointer;
+	display: inline-flex;
+	font-weight: 600;
+	border: 0;
+	justify-content: center;
 }
 
 body {
-	font-family: 'Red Hat Text', sans-serif
+	font-family: 'Red Hat Text', sans-serif;
+	color: hsl(var(--clr-neutral-900));
+	background-color: hsl(var(--clr-neutral-100));
 }

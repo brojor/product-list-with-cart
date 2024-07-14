@@ -10,7 +10,7 @@
 			Add to Cart
 		</button>
 		<p class="product-category">{{ product.category }}</p>
-		<h2 class="product-name">{{ product.name }}</h2>
+		<h3 class="product-name">{{ product.name }}</h3>
 		<p class="product-price">{{ formatPrice(product.price) }}</p>
 	</div>
 </template>
@@ -53,12 +53,9 @@ button {
 	margin-inline: auto;
 	border: 1px solid hsl(var(--clr-neutral-400));
 	background-color: #fff;
-	font-weight: 600;
 	color: hsl(14, 65%, 9%);
 	font-size: 0.875rem;
-	display: inline-flex;
 	gap: 0.5rem;
-	cursor: pointer;
 }
 
 .product-category {

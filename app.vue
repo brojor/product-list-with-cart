@@ -6,7 +6,9 @@
         <ProductItem v-for="product in productList" :product="product"></ProductItem>
       </div>
     </main>
-    <aside></aside>
+    <aside>
+      <ACart />
+    </aside>
   </div>
 </template>
 
@@ -36,8 +38,9 @@ h1 {
 }
 
 aside {
-  width: 24rem;
-  background-color: rgb(162, 162, 246);
+  width: 100%;
+  /* border: 1px solid red; */
+  /* background-color: rgb(162, 162, 246); */
 }
 
 .cards {
@@ -59,6 +62,11 @@ aside {
   .cards {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  aside {
+    width: 50%;
+    align-self: center;
+  }
 }
 
 @media(min-width: 70rem) {
@@ -66,6 +74,11 @@ aside {
     flex-direction: row;
     padding: 2rem;
     margin-block: 3.4rem;
+  }
+
+  aside {
+    width: 24rem;
+    align-self: flex-start;
   }
 }
 </style>
