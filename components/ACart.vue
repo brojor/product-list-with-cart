@@ -11,7 +11,7 @@
 			</ul>
 			<div class="order-total">
 				<span>Order Total</span>
-				<span>${{ cartStore.totalPrice }}</span>
+				<span>{{ formatPrice(cartStore.totalPrice) }}</span>
 			</div>
 			<div class="delivery-info">
 				<IconsCarbonNeutral />
