@@ -7,7 +7,7 @@
 		</picture>
 		<ProductButton :product="product" :isActive="isActive" />
 		<p class="product-category">{{ product.category }}</p>
-		<h3 class="product-name">{{ product.name }}</h3>
+		<h2 class="product-name">{{ product.name }}</h2>
 		<p class="product-price">{{ formatPrice(product.price) }}</p>
 	</div>
 </template>
