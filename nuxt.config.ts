@@ -12,6 +12,9 @@ export default defineNuxtConfig({
 	app: {
 		head: {
 			title: 'Product list with cart',
+			htmlAttrs: {
+				lang: 'en',
+			},
 		},
 	}
 })
