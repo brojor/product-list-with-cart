@@ -3,7 +3,7 @@
 		<h2>Your Cart ({{ cartStore.totalQuantity }})</h2>
 		<div v-if="isEmpty" class="empty-cart">
 			<IlustrationEmptyCart />
-			<p>Your added items will appears here</p>
+			<p>Your added items will appear here</p>
 		</div>
 		<template v-else>
 			<ul>
@@ -34,7 +34,7 @@ const isEmpty = computed(() => cartStore.items.length === 0)
 <style scoped>
 .cart {
 	background-color: #fff;
-	border-radius: 0.5rem;
+	border-radius: 0.75rem;
 	padding: 1.5rem;
 }
 
@@ -42,24 +42,25 @@ const isEmpty = computed(() => cartStore.items.length === 0)
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	margin-bottom: 1rem;
 }
 
 h2 {
 	color: hsl(var(--clr-red));
 	font-size: 1.5rem;
+	line-height: 1.5;
 	align-self: flex-start;
 }
 
 .empty-cart p {
 	color: hsl(var(--clr-neutral-400));
-	font-size: 0.8125rem;
-	letter-spacing: 0.25px;
+	font-size: 0.875rem;
 	font-weight: 600;
 	margin-top: 1rem;
 }
 
 .empty-cart svg {
-	margin-top: 2.5rem;
+	margin-top: 2.35rem;
 }
 
 ul {
