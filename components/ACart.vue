@@ -1,19 +1,17 @@
 <template>
 	<div class="cart">
-		<h2>Your Cart (0)</h2>
+		<h2>Your Cart ({{ cartStore.totalQuantity }})</h2>
 		<div v-if="isEmpty" class="empty-cart">
 			<IlustrationEmptyCart />
 			<p>Your added items will appears here</p>
 		</div>
 		<template v-else>
 			<ul>
-				<CartItem />
-				<CartItem />
-				<CartItem />
+				<CartItem v-for="item in cartStore.items" :key="item.product.id" :item="item" />
 			</ul>
 			<div class="order-total">
 				<span>Order Total</span>
-				<span>$46.50</span>
+				<span>${{ cartStore.totalPrice }}</span>
 			</div>
 			<div class="delivery-info">
 				<IconsCarbonNeutral />
@@ -25,7 +23,10 @@
 </template>
 
 <script setup lang="ts">
-const isEmpty = ref(false)
+import { useCartStore } from '~/stores/cart';
+
+const cartStore = useCartStore()
+const isEmpty = computed(() => cartStore.items.length === 0)
 </script>
 
 <style scoped>

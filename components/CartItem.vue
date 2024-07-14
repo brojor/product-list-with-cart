@@ -1,14 +1,14 @@
 <template>
 	<li>
 		<div>
-			<h3 class="name">Classic Tiramisu</h3>
+			<h3 class="name">{{ item.product.name }}</h3>
 			<p>
-				<span class="amount">1x</span>
-				<span class="unit-price">@ $5.50</span>
-				<span class="total-price">$5.50</span>
+				<span class="amount">{{ item.quantity }}x</span>
+				<span class="unit-price">@ {{ formatPrice(item.product.price) }}</span>
+				<span class="total-price">{{ formatPrice(item.product.price * item.quantity) }}</span>
 			</p>
 		</div>
-		<button>
+		<button @click="cartStore.removeFromCart(item.product.id)">
 			<IconsRemoveItem />
 		</button>
 	</li>
@@ -16,7 +16,17 @@
 
 
 <script setup lang="ts">
+import { useCartStore } from '~/stores/cart';
+import type { Product } from '~/types';
 
+defineProps<{
+	item: {
+		product: Product;
+		quantity: number;
+	}
+}>()
+
+const cartStore = useCartStore()
 </script>
 
 

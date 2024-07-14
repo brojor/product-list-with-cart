@@ -5,7 +5,7 @@
 			<source media="(min-width: 37.5rem)" :srcset="product.image.tablet">
 			<img :src="product.image.mobile" :alt="product.name">
 		</picture>
-		<button>
+		<button @click="addToCart(product)">
 			<IconsAddToCart />
 			Add to Cart
 		</button>
@@ -16,23 +16,19 @@
 </template>
 
 <script setup lang="ts">
-interface Image {
-	thumbnail: string
-	mobile: string
-	tablet: string
-	desktop: string
-}
+import type { Product } from '~/types'
+import { useCartStore } from '~/stores/cart';
 
-interface Product {
-	image: Image
-	name: string
-	category: string
-	price: number
-}
+const cartStore = useCartStore()
 
 defineProps<{ product: Product }>()
 
-const formatPrice = (price: number) => `$${price.toFixed(2)}`
+
+
+const addToCart = (product: Product) => {
+	cartStore.addToCart(product)
+}
+
 </script>
 
 <style scoped>
