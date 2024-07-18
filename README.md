@@ -1,75 +1,44 @@
-# Nuxt 3 Minimal Starter
+# Frontend Mentor - Product list with cart solution
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This is a solution to the [Product list with cart challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/product-list-with-cart-5MmqLVAp_d). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-## Setup
+## Table of contents
 
-Make sure to install the dependencies:
+- [Frontend Mentor - Product list with cart solution](#frontend-mentor---product-list-with-cart-solution)
+	- [Table of contents](#table-of-contents)
+	- [Overview](#overview)
+		- [The challenge](#the-challenge)
+		- [Screenshot](#screenshot)
+		- [Links](#links)
+		- [Built with](#built-with)
 
-```bash
-# npm
-npm install
+## Overview
 
-# pnpm
-pnpm install
+### The challenge
 
-# yarn
-yarn install
+Users should be able to:
 
-# bun
-bun install
-```
+- Add items to the cart and remove them
+- Increase/decrease the number of items in the cart
+- See an order confirmation modal when they click "Confirm Order"
+- Reset their selections when they click "Start New Order"
+- View the optimal layout for the interface depending on their device's screen size
+- See hover and focus states for all interactive elements on the page
 
-## Development Server
+### Screenshot
 
-Start the development server on `http://localhost:3000`:
+![Screenshot](./screenshot.png)
 
-```bash
-# npm
-npm run dev
+### Links
 
-# pnpm
-pnpm run dev
+- [Solution URL](https://github.com/brojor/product-list-with-cart)
+- [Live Site URL](https://product-list.brojor.me/)
 
-# yarn
-yarn dev
+### Built with
 
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+- Semantic HTML5 markup
+- CSS
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
+- [Nuxt](https://nuxtjs.org/) - Vue framework
